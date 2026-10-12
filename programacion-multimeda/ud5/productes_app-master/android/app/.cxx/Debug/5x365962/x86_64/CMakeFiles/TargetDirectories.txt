@@ -1,0 +1,2 @@
+C:/Users/Nerea/Desktop/DAM/PMD/UD5_2/productes_app-master/android/app/.cxx/Debug/5x365962/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Nerea/Desktop/DAM/PMD/UD5_2/productes_app-master/android/app/.cxx/Debug/5x365962/x86_64/CMakeFiles/rebuild_cache.dir
