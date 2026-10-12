@@ -1,0 +1,11 @@
+Información del Cliente con ID: 2
+
+Ciudad: Woburn
+
+Cuentas del Cliente:
+Cuenta: 4 | Saldo disponible: $2058.02
+Cuenta: 5 | Saldo disponible: $500.0
+
+Saldo total del cliente: $2558.02
+
+Informe generado por Nerea Montoya el 26-03-2025 14:23:41

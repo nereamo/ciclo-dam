@@ -1,0 +1,7 @@
+com\mycompany\Utilidades\Utilidades.class
+com\mycompany\Vehiculos\Vtc.class
+com\mycompany\Vehiculos\Taxi.class
+com\mycompany\transfer\Matricula.class
+com\mycompany\transfer\Transfers.class
+com\mycompany\transfer\ArrayVehicles.class
+com\mycompany\transfer\Vehicle.class
