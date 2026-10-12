@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="36" updatableVersionMin="" updatableVersionMax="" fileName="MediaBox_windows-x64_1_0.exe" newVersion="1.0" newMediaFileId="36" fileSize="285629952" md5Sum="e8b77fb363558d2ee4391e43f0dca9e4" sha256Sum="fee84aab9cdb7465a8265c9af87d70e8590551ff92b05bcfa070877806b342c2" bundledJre="windows-amd64-24.0.2.tar.gz" jreMinVersion="24" jreMaxVersion="24" archive="false" singleBundle="false">
+    <comment language="en" />
+  </entry>
+</updateDescriptor>

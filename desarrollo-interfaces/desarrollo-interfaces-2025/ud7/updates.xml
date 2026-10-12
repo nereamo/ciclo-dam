@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="37" updatableVersionMin="" updatableVersionMax="" fileName="Pro_windows-x64_1_0.exe" newVersion="1.0" newMediaFileId="37" fileSize="56311296" md5Sum="ca00b1210ce3ddbca5b78740f9e14452" sha256Sum="0ea93bba4ed41e5246b84024b0269e0b93528b6edfea1201db5ccf23f45149b4" bundledJre="windows-amd64-21.0.5.tar.gz" jreMinVersion="21" jreMaxVersion="21" archive="false" singleBundle="false">
+    <comment language="en" />
+  </entry>
+</updateDescriptor>

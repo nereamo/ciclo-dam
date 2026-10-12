@@ -1,0 +1,3 @@
+# List of generated media files. The columns are tab-separated:
+# id | media file type | display name | media file path
+37	windows	Windows	C:\Users\Nerea\Desktop\DAM\DI\UD7\Pro_windows-x64_1_0.exe

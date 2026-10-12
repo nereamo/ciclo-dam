@@ -1,0 +1,3 @@
+# List of generated media files. The columns are tab-separated:
+# id | media file type | display name | media file path
+36	windows	Windows	C:\Users\Nerea\Desktop\DAM02\DI\UD7\MediaBox_windows-x64_1_0.exe
