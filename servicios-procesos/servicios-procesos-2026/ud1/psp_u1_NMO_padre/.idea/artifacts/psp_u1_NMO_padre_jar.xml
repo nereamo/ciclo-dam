@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="psp_u1_NMO_padre:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/psp_u1_NMO_padre_jar</output-path>
+    <root id="archive" name="psp_u1_NMO_padre.jar">
+      <element id="module-output" name="psp_u1_NMO_padre" />
+    </root>
+  </artifact>
+</component>
