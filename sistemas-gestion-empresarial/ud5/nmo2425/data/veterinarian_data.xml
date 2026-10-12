@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Veterinario 1 -->
+        <record id="veterinarian_1" model="nmo2425.veterinarian">
+            <field name="name">Dr. Otero</field>
+            <field name="specialization">Generalist</field>
+            <field name="phone">123456789</field>
+            <field name="email">dr.otero@veterinarian.com</field>
+        </record>
+        
+        <!-- Veterinario 2 -->
+        <record id="veterinarian_2" model="nmo2425.veterinarian">
+            <field name="name">Dr. Martínez</field>
+            <field name="specialization">Surgeon</field>
+            <field name="phone">987654321</field>
+            <field name="email">dr.martinez@veterinarian.com</field>
+        </record>
+
+        <!-- Veterinario 3 -->
+        <record id="veterinarian_3" model="nmo2425.veterinarian">
+            <field name="name">Dr. García</field>
+            <field name="specialization">Dermatology</field>
+            <field name="phone">456123789</field>
+            <field name="email">dr.garcia@veterinarian.com</field>
+        </record>
+
+        <!-- Veterinario 4 -->
+        <record id="veterinarian_4" model="nmo2425.veterinarian">
+            <field name="name">Dr. Fernández</field>
+            <field name="specialization">Orthopedics</field>
+            <field name="phone">111223344</field>
+            <field name="email">dr.fernandez@veterinarian.com</field>
+        </record>
+
+        <!-- Veterinario 5 -->
+        <record id="veterinarian_5" model="nmo2425.veterinarian">
+            <field name="name">Dr. Ruiz</field>
+            <field name="specialization">Dentistry</field>
+            <field name="phone">999888777</field>
+            <field name="email">dr.ruiz@veterinarian.com</field>
+        </record>
+    </data>
+</odoo>

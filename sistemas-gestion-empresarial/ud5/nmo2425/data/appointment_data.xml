@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Cita 1 -->
+        <record id="appointment_1" model="nmo2425.appointment">
+            <field name="date">2025-04-20</field>
+            <field name="notes">First vaccination check-up</field>
+            <field name="cost">30.00</field>
+            <field name="is_follow_up">False</field>
+            <field name="pet_id" ref="pet_1"/> 
+            <field name="veterinarian_id" ref="veterinarian_1"/> 
+        </record>
+
+        <!-- Cita 2 -->
+        <record id="appointment_2" model="nmo2425.appointment">
+            <field name="date">2025-04-22</field>
+            <field name="notes">Routine health check-up</field>
+            <field name="cost">25.00</field>
+            <field name="is_follow_up">False</field>
+            <field name="pet_id" ref="pet_2"/> 
+            <field name="veterinarian_id" ref="veterinarian_2"/> 
+        </record>
+
+        <!-- Cita 3 -->
+        <record id="appointment_3" model="nmo2425.appointment">
+            <field name="date">2025-04-24</field>
+            <field name="notes">Surgical consultation</field>
+            <field name="cost">75.00</field>
+            <field name="is_follow_up">True</field>
+            <field name="pet_id" ref="pet_3"/> 
+            <field name="veterinarian_id" ref="veterinarian_3"/> 
+        </record>
+
+        <!-- Cita 4 -->
+        <record id="appointment_4" model="nmo2425.appointment">
+            <field name="date">2025-04-28</field>
+            <field name="notes">Teeth cleaning</field>
+            <field name="cost">50.00</field>
+            <field name="is_follow_up">False</field>
+            <field name="pet_id" ref="pet_4"/> 
+            <field name="veterinarian_id" ref="veterinarian_4"/> 
+        </record>
+
+        <!-- Cita 5 -->
+        <record id="appointment_5" model="nmo2425.appointment">
+            <field name="date">2025-05-01</field>
+            <field name="notes">General health check-up</field>
+            <field name="cost">35.00</field>
+            <field name="is_follow_up">False</field>
+            <field name="pet_id" ref="pet_5"/> 
+            <field name="veterinarian_id" ref="veterinarian_5"/> 
+        </record>
+    </data>
+</odoo>

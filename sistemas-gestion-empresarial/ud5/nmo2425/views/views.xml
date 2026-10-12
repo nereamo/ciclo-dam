@@ -1,0 +1,195 @@
+<odoo>
+    <!-- Vista de lista para Appointment -->
+    <record id="view_appointment_list" model="ir.ui.view">
+        <field name="name">nmo2425.appointment.list</field>
+        <field name="model">nmo2425.appointment</field>
+        <field name="arch" type="xml">
+            <list string="Appointments">
+                <field name="date"/>
+                <field name="notes"/>
+                <field name="cost"/>
+                <field name="is_follow_up"/>
+                <field name="pet_id"/>
+                <field name="veterinarian_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para Appointment -->
+    <record id="view_appointment_form" model="ir.ui.view">
+        <field name="name">nmo2425.appointment.form</field>
+        <field name="model">nmo2425.appointment</field>
+        <field name="arch" type="xml">
+            <form string="Appointment">
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="notes"/>
+                        <field name="cost"/>
+                        <field name="is_follow_up"/>
+                        <field name="pet_id"/>
+                        <field name="veterinarian_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de calendario para Appointment -->
+    <record id="view_appointment_calendar" model="ir.ui.view">
+        <field name="name">nmo2425.appointment.calendar</field>
+        <field name="model">nmo2425.appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointments" date_start="date">
+                <field name="date"/>
+                <field name="pet_id"/>
+                <field name="veterinarian_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Vista de búsqueda para Appointment -->
+    <record id="view_appointment_search" model="ir.ui.view">
+        <field name="name">nmo2425.appointment.search</field>
+        <field name="model">nmo2425.appointment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="date"/>
+                <field name="pet_id"/>
+                <filter name="follow_up" string="Follow-up" domain="[('is_follow_up', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Menú principal -->
+    <menuitem id="menu_veterinary_main" name="Veterinary"/>
+
+    <!-- Acción para ver Appointment -->
+    <record id="action_appointments" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">nmo2425.appointment</field>
+        <field name="view_mode">list,form,calendar</field>
+    </record>
+
+    <!-- Menú para Appointment con acción -->
+    <menuitem id="menu_appointments" name="Appointments"
+              parent="menu_veterinary_main" action="action_appointments"/>
+
+    <!-- Vista de lista para Pet -->
+    <record id="view_pet_list" model="ir.ui.view">
+        <field name="name">nmo2425.pet.list</field>
+        <field name="model">nmo2425.pet</field>
+        <field name="arch" type="xml">
+            <list string="Pets">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="type"/>
+                <field name="vaccinated"/>
+                <field name="weight"/>
+                <field name="health_status"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para Pet -->
+    <record id="view_pet_form" model="ir.ui.view">
+        <field name="name">nmo2425.pet.form</field>
+        <field name="model">nmo2425.pet</field>
+        <field name="arch" type="xml">
+            <form string="Pet">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="type"/>
+                        <field name="vaccinated"/>
+                        <field name="weight"/>
+                        <field name="health_status"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de búsqueda para Pet -->
+    <record id="view_pet_search" model="ir.ui.view">
+        <field name="name">nmo2425.pet.search</field>
+        <field name="model">nmo2425.pet</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="age"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Acción para ver Pet -->
+    <record id="action_pets" model="ir.actions.act_window">
+        <field name="name">Pets</field>
+        <field name="res_model">nmo2425.pet</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menú para Pet con acción -->
+    <menuitem id="menu_pets" name="Pets"
+              parent="menu_veterinary_main" action="action_pets"/>
+
+    <!-- Vista de lista para Veterinarian -->
+    <record id="view_veterinarian_list" model="ir.ui.view">
+        <field name="name">nmo2425.veterinarian.list</field>
+        <field name="model">nmo2425.veterinarian</field>
+        <field name="arch" type="xml">
+            <list string="Veterinarians">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="specialization"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para Veterinarian -->
+    <record id="view_veterinarian_form" model="ir.ui.view">
+        <field name="name">nmo2425.veterinarian.form</field>
+        <field name="model">nmo2425.veterinarian</field>
+        <field name="arch" type="xml">
+            <form string="Veterinarian">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para ver Veterinarian -->
+    <record id="action_veterinarians" model="ir.actions.act_window">
+        <field name="name">Veterinarians</field>
+        <field name="res_model">nmo2425.veterinarian</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menú para Veterinarian con acción -->
+    <menuitem id="menu_veterinarians" name="Veterinarians"
+              parent="menu_veterinary_main" action="action_veterinarians"/>
+
+    <!-- Herencia de vista: añadir campo adicional_info debajo de notes -->
+    <record id="view_appointment_form_inherit_additional_info" model="ir.ui.view">
+        <field name="name">nmo2425.appointment.form.inherit.additional.info</field>
+        <field name="model">nmo2425.appointment</field>
+        <field name="inherit_id" ref="nmo2425.view_appointment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notes']" position="after">
+                <field name="additional_info"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

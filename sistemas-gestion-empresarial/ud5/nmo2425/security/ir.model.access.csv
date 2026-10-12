@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nmo2425_nmo2425,nmo2425.nmo2425,model_nmo2425_nmo2425,base.group_user,1,1,1,1
+access_appointment_user,nmo2425.appointment,model_nmo2425_appointment,base.group_user,1,1,1,1
+access_pet_user,nmo2425.pet,model_nmo2425_pet,base.group_user,1,1,1,1
+access_veterinarian_user,nmo2425.veterinarian,model_nmo2425_veterinarian,base.group_user,1,1,1,1
