@@ -1,27 +1,39 @@
-# BlobPollingComponent
+# ☁️ BlobPollingComponent
 
-Componente que al arrancar, cada intervalo refrescará y comparará si se han añadido/eliminado archivos del contenedor asignado, mostrando la información del archivo.
+Componente Java diseñado para la monitorización periódica de contenedores de **Azure Blob Storage**. Al iniciarse, consulta en intervalos configurables el contenedor asignado para detectar la adición o eliminación de archivos, notificando los cambios e información de cada fichero.
 
-Properties: 
+---
 
-Connection String (añadir direccion azure).
-Container Name (añadir nombre del contenedor donde estan ubicados los archivos).
+## ⚙️ Propiedades del Componente
 
-Ejecución: 
-Asignar un valor de intervalo y pulsar botón ON.
+| Propiedad | Descripción |
+| :--- | :--- |
+| **Connection String** | Cadena de conexión con la dirección e identificación de Azure. |
+| **Container Name** | Nombre del contenedor donde se ubican los archivos a monitorizar. |
 
-En el JFrame de prueba debes añadir esto:
+---
 
-Añadir al constructor:
+## 🚀 Guía de Ejecución
 
-    blobPollingComponent1.addNewBlobListener(new BlobEventListener(){
-                @Override
-                public void onBlobNotification(String message) {
-                    jTextAreaBlobInfo.setText(message);
-                }    
-            });  
+1. Asignar un valor para el intervalo de consulta (*polling*).
+2. Pulsar el botón **ON** para iniciar la monitorización.
 
-Añadir ToggleButton y el siguiente código: 
+---
+
+## 💻 Integración en el `JFrame` de Prueba
+
+### 1. Registrar el Listener de Notificaciones (Constructor)
+
+Añade este bloque dentro del constructor de tu `JFrame` para capturar los eventos y mostrar los mensajes en pantalla:
+
+    blobPollingComponent1.addNewBlobListener(new BlobEventListener() {
+        @Override
+        public void onBlobNotification(String message) {
+            jTextAreaBlobInfo.setText(message);
+        } 
+    });
+
+Asigna el siguiente código al evento de un JToggleButton para alternar la ejecución del componente: 
 
     try {
             if (jToggleButtonOnOff.isSelected()) {
