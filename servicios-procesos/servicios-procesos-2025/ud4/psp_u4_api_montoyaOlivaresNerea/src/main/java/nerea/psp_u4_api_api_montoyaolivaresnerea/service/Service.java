@@ -16,6 +16,14 @@ import java.util.Iterator;
 import java.util.List;
 import nerea.psp_u4_api_api_montoyaolivaresnerea.model.Obras;
 
+/**
+*Puede utilizarse estos imports con estas anotaciones:
+* import jakarta.ws.rs.core.MediaType;
+* import jakarta.ws.rs.core.Response
+    
+* @Consumes(MediaType.APPLICATION_JSON)
+* @Produces(MediaType.APPLICATION_JSON)
+*/
 
 /**
 * @author Nerea
@@ -34,12 +42,14 @@ public class Service {
     public Service() {
     }
 
+    // Devuelve todas las obras de la api
     @GET
     @Produces({"application/json"})
     public Response getObras() {
         return Response.ok(listaObras).build();
     }
 
+    // Devuelve la obra buscada por id
     @GET
     @Path("/{id}")
     @Consumes({"application/json"})
@@ -58,7 +68,18 @@ public class Service {
 
         return Response.ok(obra).build();
     }
+    /**
+    public Response getObraById(@PathParam("id") int id) { // Convertimos id a int directamente
+        for (Obras obra : listaObras) {
+            if (obra.getIdObra() == id) {
+                return Response.ok(obra).build();
+            }
+        }
+        return Response.status(Response.Status.NOT_FOUND).entity("Obra no encontrada").build();
+    }
+    */
 
+    // Devuelve la obra buscada por autor
     @GET
     @Path("/autor/{autor}")
     @Consumes({"application/json"})
@@ -82,6 +103,23 @@ public class Service {
         }
     }
 
+    /**
+    public Response getObrasByAutor(@PathParam("autor") String autor) {
+        System.out.println("Buscando autor: " + autor);
+        List<Obras> obrasAutor = new ArrayList<>();
+        for (Obras obra : listaObras) {
+            if (obra.getAutor().equalsIgnoreCase(autor)) {
+                obrasAutor.add(obra);
+            }
+        }
+        if (obrasAutor.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND).entity("No se han encontrado obras de este autor.").build();
+        }
+        return Response.ok(obrasAutor).build();
+    }
+    */
+
+    // Crea una obra en la api
     @POST
     @Path("/createObra")
     @Consumes({"application/json"})
@@ -92,6 +130,7 @@ public class Service {
         return Response.status(Status.CREATED).entity(listaObras).build();
     }
 
+    // Modifica una obre de la api
     @PUT
     @Path("/updateObra")
     @Consumes({"application/json"})
@@ -118,6 +157,27 @@ public class Service {
         }
     }
 
+    /**
+    public Response updateObra(Obras obraUpdate) {
+        Obras found = null;
+        for (Obras obra : listaObras) {
+            if (obra.getIdObra() == obraUpdate.getIdObra()) {
+                found = obra;
+            }
+        }
+        if (found == null) {
+            return Response.status(Response.Status.NOT_FOUND).entity("Obra no encontrada").build();
+        } else {
+            found.setTitol(obraUpdate.getTitol());
+            found.setAny(obraUpdate.getAny());
+            found.setModalitat(obraUpdate.getModalitat());
+            found.setAutor(obraUpdate.getAutor());
+            return Response.ok(found).build();
+        }
+    }
+    */
+
+    // Elimina una obre de la api
     @DELETE
     @Path("/deleteObra/{id}")
     @Consumes({"application/json"})
@@ -137,5 +197,22 @@ public class Service {
 
         return found == null ? Response.status(Status.NOT_FOUND).entity("Obra no encontrada").build() : Response.ok(listaObras).build();
     }
+    /**
+    public Response deleteObra(@PathParam("id") int id) {
+        Obras found = null;
+        for (Obras obra : listaObras) {
+            if (obra.getIdObra() == id) {
+                found = obra;
+                listaObras.remove(found);
+                break;
+            }
+        }
+        if (found == null) {
+            return Response.status(Response.Status.NOT_FOUND).entity("Obra no encontrada").build();
+        } else {
+            return Response.ok(listaObras).build();
+        }
+    }
+    */
 }
 
