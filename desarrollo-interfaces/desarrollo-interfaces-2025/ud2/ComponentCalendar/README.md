@@ -24,3 +24,12 @@ Para utilizar este componente en tus proyectos, añade la siguiente dependencia 
         <version>1.0-SNAPSHOT</version>
     </dependency>
 </dependencies>
+
+Añadir al constructor de tu pproyecto:
+
+calendarPanel1.addCalendarEventListener(new CalendarEventListener(){
+  @Override
+    public void onDayClicked(WorkoutCalendarEvent event) {
+      jTextAreaWorkoutInfo.setText(event.toString());
+    }
+});
