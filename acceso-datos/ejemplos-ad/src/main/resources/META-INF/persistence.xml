@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd" version="3.1">
+    <!--Biblioteca-PU es el nombre que se asignara a EntityManagerFactory que esta en el ejemplo mas abajo -->
+    <persistence-unit name="interins">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <!-- Connexió a la base de dades -->
+            <property name="hibernate.connection.url" value="jdbc:mysql://daw.paucasesnovescifp.cat:3306/interins"/>
+            <property name="hibernate.connection.username" value="usuari"/>
+            <property name="hibernate.connection.password" value="seCret_24"/>
+            <!-- Optimització de connexions -->
+            <property name="hibernate.connection.pool_size" value="1"/>
+            <!-- Mostrar SQLs a la consola -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- Estratègia DDL (creació/validació de taules) -->
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
