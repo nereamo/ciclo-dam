@@ -15,9 +15,11 @@ public class Obras implements Serializable {
     private String autor;
 
     public Obras() {
+        //super();
     }
 
     public Obras(int idObra, String titol, String any, String modalitat, String autor) {
+        //super();
         this.idObra = idObra;
         this.titol = titol;
         this.any = any;
