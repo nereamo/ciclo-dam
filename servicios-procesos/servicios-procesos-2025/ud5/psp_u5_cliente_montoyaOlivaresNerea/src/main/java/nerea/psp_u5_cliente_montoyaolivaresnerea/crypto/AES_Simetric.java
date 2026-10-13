@@ -14,9 +14,17 @@ import javax.crypto.spec.IvParameterSpec;
 public class AES_Simetric {
     public static final byte[] IV_PARAM = new byte[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
 
+    /** 
+    public static final byte[] IV_PARAM = {0x00, 0x01, 0x02, 0x03,
+            0x04, 0x05, 0x06, 0x07,
+            0x08, 0x09, 0x0A, 0x0B,
+            0x0C, 0x0D, 0x0E, 0x0F};
+    */
+
     public AES_Simetric() {
     }
 
+    // Cifra datos con AES usando clave simétrica y un IV fijo
     public static byte[] encryptData(SecretKey sKey, byte[] data) {
         byte[] encryptedData = null;
 
@@ -33,6 +41,7 @@ public class AES_Simetric {
         return encryptedData;
     }
 
+    // Genera una clave secreta (simétrica) para usar con AES.
     public static SecretKey keygenKeyGeneration(int keySize) {
         SecretKey sKey = null;
         if (keySize == 128 || keySize == 192 || keySize == 256) {
