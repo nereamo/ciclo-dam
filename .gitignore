@@ -24,6 +24,14 @@ hs_err_pid*
 replay_pid*
 
 # Ignorar carpetas de compilación
+.dart_tool/
+.pub-cache/
 build/
-*.apk
+
+# Archivos ejecutables y binarios de Windows / Linux / Mac
+*.exe
+*.dll
+*.pdb
 *.so
+*.apk
+*.install4j
