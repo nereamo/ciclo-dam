@@ -50,7 +50,7 @@ class _CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Exactament igual que la AppBaer però amb bon comportament davant scroll
+    // Exactament igual que la AppBar però amb bon comportament davant scroll
     return SliverAppBar(
       backgroundColor: Colors.black,
       expandedHeight: 200,
