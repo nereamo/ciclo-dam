@@ -1,156 +1,97 @@
-Nerea Montoya
+# 📥 MediaBox
+> Aplicación de escritorio en Java para la gestión, descarga y reproducción de contenidos multimedia y audio.
 
-# MediaBox
-Aplicación para descarga de videos y audio.
-
-## Commits del repo anterior
-<img width="2560" height="1392" alt="Captura de pantalla 2025-10-23 121514" src="https://github.com/user-attachments/assets/a5db15ff-f833-413e-afc3-7fe6e1d75acb" />
-
-# 🌐 Recursos
-
-### 🎬 Videos:
-Instrucciones para crear la interfaz, el comportamiento y los componentes a utilizar.
-
-    - https://youtu.be/SOKLL0S1RQo?si=dWPB2aIZPc1xYAAL
-
-### 🔍 Busquedas:
-Implementació de Threads.
-
-    - https://programandoenjava.com/hilos-thread-en-java/
-    - https://es.stackoverflow.com/questions/41453/c%C3%B3mo-terminar-o-eliminar-un-hilo-por-completo-en-java
-
-Creación de JSON con libreria Jackson.
-
-    - https://www.arquitecturajava.com/java-json-con-jackson/
-
-### 🤖 IAs Utilizadas:
-
-    - Copilot:
-        · Implementación SwingWorker.
-    
-    - Gemini: 
-        · Distintos tipos de formatos a descargar.
-        · Logica para obtener la ubicacion de yt-dlp.exe de forma automática.
+**Autor:** Nerea Montoya
 
 ---
 
-# Funcionalidades extra:
- 📋 Pegar desde Clipboard.
+## 📜 Historial de Commits
+<details>
+<summary>Ver captura del historial de commits</summary>
 
-    - Permite copiar la url del portapepeles utilizando el botón "Paste" de la interfaz principal.
-
-📊 Barra de progreso.
-
-    - Muestra el progreso de descarga en un JProgressBar.
-
-▶️ Botón PLAY en tabla.
-
-    - Permite abrir cualquier descarga seleccionado un archivo de la tabla.
-
-⬇️ Botón Download API File.
-
-    - Permite descargar un archivo de la API
-
-⬆️ Botón Upload File to API
-
-    - Permite subir un archivo local a la API
-
-🔄 Comprobación de nuevos archivos
-
-    - El componente "MediaPollingComponent" consulta periódicamente la API notificando si hay nuevos archivos.
-    - Al iniciar el programa, obtiene el token del usuario e inicia el polling.
-    - Desde las properties del designer de netBeans puede modificarse el tiempo entre consultas (pollingInterval) o desactivar el polling (running).
+<br>
+<img width="2560" height="1392" alt="Historial de Commits" src="https://github.com/user-attachments/assets/a5db15ff-f833-413e-afc3-7fe6e1d75acb" />
+</details>
 
 ---
 
-# ⚠️ Problemas encontrados:
-## 🐞 Descarga en formato Webm:
+## 🚀 Funcionalidades Principales
 
-❌ Problema
+* **📋 Pegar desde Portapapeles:** Permite capturar la URL directamente utilizando el botón "Paste" de la interfaz principal.
+* **📊 Barra de Progreso:** Muestra el estado y avance de la descarga en tiempo real mediante un `JProgressBar`.
+* **▶️ Reproductor Integrado:** Permite abrir y reproducir cualquier archivo multimedia seleccionado directamente desde la tabla.
+* **⬇️ Gestión con API:** Botón dedicado para la descarga de archivos remotos desde la API.
+* **⬆️ Subida de Archivos:** Permite subir recursos locales hacia la API de manera sencilla.
+* **🔄 Sincronización Automática (Polling):** 
+  * El componente `MediaPollingComponent` consulta periódicamente la API para notificar la existencia de nuevos archivos.
+  * Al iniciar sesión, el sistema obtiene el token del usuario e inicia el ciclo de sondeo (*polling*).
+  * Desde las propiedades de diseño de NetBeans, es posible configurar el intervalo de tiempo (`pollingInterval`) o desactivar la función (`running`).
 
-    - Al descargar en formato Webm y despues descargar el mismo archivo pero en formato audio, se sobreescribia el archivo con extensión Webm.
-
-✔️ Solución
-
-    - Cambiar el nombre añadiendo _audio al descargar en audio: "%(title)s_audio.%(ext)s"
-
-
-## 🐞 Cambio entre los paneles Login, Frame y Preferences:
-
-❌ Problema
-
-    - Al añadir el JPanel Login mostraba en Frame con sus componentes, pero al querer editar las preferencias, no se visualizaban los componentes de JPanel Preferences.
-
-✔️ Solución
-
-    - Cambiar el Layout(null) a CardLayout, añadiendo todos los JPanels a CardLayout y alternar entre ellos.
-
- ## 🐞 Parpadeo visual en celdas de acción (Flash Blanco):
-
-❌ Problema
-
-    - Al pulsar alguno de los botones de la columna "Actions" la celda sufría un parpadeo blanco momentáneo .
-
-✔️ Solución
-
-    - Sustitución de los botones por JLabels, permitiendo mantener el Look&Feel establecido.
-        
 ---
 
-# 🎨 Usabilidad y Experiencia de Usuario
+## ⚠️ Resolución de Problemas y Retos Técnicos
 
-## 🎨 Visual appearance, color, and interface:
+### 🐞 1. Descarga en formato Webm
+* **Problema:** Al descargar un vídeo en formato Webm y posteriormente descargar el mismo recurso en formato de audio, el segundo sobrescribía al archivo original webm debido a la colisión de nombres.
+* **Solución:** Modificación de la nomenclatura añadiendo un sufijo identificativo al descargar audio: `%(title)s_audio.%(ext)s`.
 
-Se ha aplicado una interfaz oscura con tonos grises y púrpuras reduciendo la fatiga visual durante su uso.
-    
-    - Los botones principales utilizan el color púrpura para destacar acciones principales de secundárias, como el botón de descarga, el botón pra selecconar el directorio, el botón de búsqueda del archivo yt-dlp.exe, el botón de subida de archivo a la API o el botón para loguearse.
-    - Utilización de distintos tonos grises para diferenciar los distintos paneles.
-    - Bordes redondeados para una comodidad visual.
-    - Incorporación de iconos en botones y en campos de texto para realizar las acciones más rapido.
-    - Realte en color púrpura en campos de texto, listas deplegables, y botones para una mejor indicación de que componente está utilizando.
-    - La interfaz sigue un flujo vertical permitiendo facilitar su uso (URL -> Selección de directorio -> Formato -> Botón descarga -> Barra de progreso -> Lista con los directorios utilizados -> Tabla informativa de las descargas)
-    - Utilización de MigLayout para ordenar los componentes y la librería FlatLaf para aplicar un aspecto mas moderno.
+### 🐞 2. Transición entre Paneles (Login, Frame y Preferences)
+* **Problema:** Al incrustar el panel de login dentro del marco principal, las vistas secundarias de preferencias no lograban renderizar ni visualizar sus componentes correctamente.
+* **Solución:** Migración de un layout nulo a un contenedor **`CardLayout`**, agrupando todos los `JPanels` bajo este gestor para alternar entre vistas de forma fluida.
 
-## 🧩 Affordance, Feedback y Restricciones:
+### 🐞 3. Parpadeo Visual en Celdas de Acción (Flash Blanco)
+* **Problema:** Al interactuar con los botones situados en la columna de acciones de la tabla, las celdas experimentaban un parpadeo visual molesto (*flash* en blanco).
+* **Solución:** Sustitución de los botones estándar por componentes `JLabel` interactivos, preservando intacto el diseño y el *Look & Feel* (`FlatLaf`) establecido.
 
-### Affordance
+---
 
-    - Los componentes muestran el cursor de mano (HANDO_CURSOR) al pasar el ratón por encima.
-    - Los campos de texto contienen placeholder indicando la información que se debe introducir.
-    - Los iconos ayudan a reforzar en entendimiento en las acciones
+## 🎨 Usabilidad y Experiencia de Usuario (UX/UI)
 
-### Feedback
+### 🎨 Aspecto visual e interfaz
+* **Diseño Moderno:** Interfaz de tonos oscuros (grises y púrpuras) optimizada para reducir la fatiga visual.
+* **Jerarquía de Color:** El color púrpura destaca las acciones principales frente a las secundarias (botones de descarga, selección de directorios, búsqueda de `yt-dlp.exe`, subida de archivos y login).
+* **Distribución:** Flujo vertical estructurado (`URL` ➡️ `Directorio` ➡️ `Formato` ➡️ `Descarga` ➡️ `Progreso` ➡️ `Historial/Tabla`).
+* **Tecnologías UI:** Implementación de **`MigLayout`** para una distribución flexible y la librería **`FlatLaf`** para un aspecto moderno tipo *Material/Dark*.
 
-La aplicación informa constantemente al usuario de que acciones debe realizar.
+### 🧩 Affordance, Feedback y Restricciones
+* **Affordance:** 
+  * Puntero en forma de mano (`HAND_CURSOR`) en todos los elementos interactivos.
+  * Campos de texto con textos guía (*placeholders*) e iconos descriptivos que facilitan la comprensión de las acciones.
+* **Feedback Dinámico:** 
+  * Mensajes emergentes de confirmación para acciones críticas (cerrar aplicación, eliminar archivos locales o descartar cambios en preferencias).
+  * Notificaciones en interfaz para el estado del login, la detección automática de `yt-dlp.exe` y avisos de validación (por ejemplo, exigir seleccionar un directorio antes de iniciar la descarga).
+* **Restricciones de Seguridad/Flujo:** El sistema bloquea las acciones de descarga si no se han completado los pasos previos obligatorios (credenciales, URL válida, ruta de destino y formato seleccionado).
 
-    - Mensajes emergentes para confirmar acciones por parte del usuario como cerrar la aplicación, eliminar un archivo o si se desea retroceder sin guardar las preferencias.
-    - Notificación emergentes al realizar una acción como guardar las preferencias, seleccionar un directorio antes de poder descargar el archivo, seleccionar un elemento de la tabla antes de poder realizar alguna acción o configurar las preferencias antes de cualquier descarga.
-    - Notificaciones en la interfaz del cierre de sesión, que se ha encontrado el archivo yt-dlp.exe o mostrar el nombre del usuario logeado en la parte superior derecha de la interfaz.
-    - Uso de la barra de progreso para informar del estado de la descarga.
-    - Actualización automática de la lista de directorios y la tabla con el último archivo descargado.
+### 🧩 Mejoras adicionales de UX
+* Iconos inteligentes en inputs para vaciar texto, alternar visibilidad de contraseñas o pegar desde el portapapeles.
+* Uso generalizado de *Tooltips* informativos.
+* Ventanas totalmente redimensionables manteniendo la proporción de sus componentes.
 
-### 🚫 Restricciones
-    - No es posible realizar una descarga si no se han establecido las preferéncias, pegado una URL, seleccionado un directorio y establecido un formato.
-    - El botón para reproducir el útlimo archivo descargado no se habilita hasta que no se haya completado la descarga y así mismo de vuelve a deshabilitar al tener una descarga en proceso.
-    
-## 🧩 Other usability improvements:
-    - Icono en campos de texto que permiten borrar el texto introducido, ver la contraseña introducida o poder pegar la URL desde el portapapeles.
-    - Uso de Tooltips para iformar de cada componente.
-    - Desde la columna Acciones de la tabla, es posible descargar un archivo de la API, reproducir un archivo local o eliminar el archivo local fisicamente.
-    - Uso de polling para notiifcar nuevos archivos de la API.
-    - Paneles intercambiables mediante el uso de CardLayout.
-    - Redimensionamiento de la ventana asi como sus componentes.
+---
 
-## 📝 Gestión de errores y logs
+## 📝 Gestión de Errores y Logs
+* **Validación de Entradas:** Comprobación rigurosa de los datos introducidos en formularios.
+* **Control de Excepciones:** Implementación de bloques `try-catch` estructurados en procesos críticos de E/S y red.
+* **Registro de Errores (Logs):** Sistema de registro interno para trazar fallos de ejecución sin bloquear ni congelar la interfaz de usuario.
 
-### Validación de entradas
-    - Comprobación de datos introducidos correctamente en campos de texto.
+---
 
-### Excepciones
-    - Uso de bloques try-catch en operaciones críticas.
-    
-### Feedback del usuario
-    - Uso de mensajes explicativos para informar al usuario de que acción debe realizar.
+## 🌐 Recursos y Referencias
 
-### Logs de error
+### 🎬 Vídeos de Apoyo
+* [Guía de diseño de interfaz y componentes](https://youtu.be/SOKLL0S1RQo?si=dWPB2aIZPc1xYAAL)
+
+### 🔍 Documentación Técnica e Hilos
+* **Concurrencia (Threads):**
+  * [Hilos y Thread en Java](https://programandoenjava.com/hilos-thread-en-java/)
+  * [Cómo terminar o eliminar un hilo por completo en Java](https://es.stackoverflow.com/questions/41453/c%C3%B3mo-terminar-o-eliminar-un-hilo-por-completo-en-java)
+* **Manipulación JSON:**
+  * [Java y JSON con la librería Jackson](https://www.arquitecturajava.com/java-json-con-jackson/)
+
+### 🤖 Asistencias de Inteligencia Artificial
+* **GitHub Copilot:**
+  * Implementación de la concurrencia asíncrona mediante `SwingWorker`.
+* **Gemini:**
+  * Propuesta de múltiples extensiones y formatos de exportación de descarga.
+  * Lógica para la localización y resolución automática de la ruta del ejecutable `yt-dlp.exe`.
     - La alicación registra información de los fallos ocurridos durante la ejecución sin bloquear la interfaz.
