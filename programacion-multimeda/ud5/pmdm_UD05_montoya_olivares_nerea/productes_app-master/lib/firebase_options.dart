@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBc6WIMmWiBJ18aHQm2Oickh-ngkN9lF5Q',
+    apiKey: 'REDACTED',
     appId: '1:61081481923:android:8878d62b93dbc5e80fa876',
     messagingSenderId: '61081481923',
     projectId: 'flutter-app-login-e678b',
@@ -59,7 +59,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBc6WIMmWiBJ18aHQm2Oickh-ngkN9lF5Q',
+    apiKey: 'REDACTED',
     appId: '1:61081481923:ios:44d676516b2be8880fa876',
     messagingSenderId: '61081481923',
     projectId: 'flutter-app-login-e678b',
